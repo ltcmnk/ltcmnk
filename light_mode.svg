@@ -1,0 +1,56 @@
+<svg width="900" height="900" viewBox="0 0 900 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="900" fill="#FFF7FB"/>
+
+  <circle cx="120" cy="110" r="180" fill="#E9B8C8" opacity="0.34"/>
+  <circle cx="810" cy="210" r="220" fill="#6D3A4F" opacity="0.08"/>
+  <circle cx="710" cy="820" r="230" fill="#F2D7E3" opacity="0.85"/>
+
+  <rect x="34" y="34" width="832" height="832" rx="30" fill="#FFFAFD" stroke="#6D3A4F" stroke-opacity="0.18"/>
+
+<text x="64" y="88" font-family="SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace" font-size="34" font-weight="700" fill="#6D3A4F">/home/mishka</text> <text x="64" y="122" font-family="SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace" font-size="14" fill="#7C6570">
+curitiba, br · computer science @ pucpr · it intern @ mbrf · fullstack · creative code · systems with personality </text>
+
+  <line x1="64" y1="154" x2="836" y2="154" stroke="#6D3A4F" stroke-opacity="0.16"/>
+
+  <text x="64" y="194" font-family="SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace" font-size="15" fill="#231820" xml:space="preserve">
+    <tspan x="64" dy="0" fill="#7C4D8B">const</tspan><tspan fill="#231820"> leticia = {</tspan>
+    <tspan x="88" dy="25">name: </tspan><tspan fill="#8F3154">"Letícia Miniuk"</tspan><tspan>,</tspan>
+    <tspan x="88" dy="25">alsoKnownAs: </tspan><tspan fill="#8F3154">"mishka"</tspan><tspan>,</tspan>
+    <tspan x="88" dy="25">basedIn: </tspan><tspan fill="#8F3154">"Curitiba, Brazil"</tspan><tspan>,</tspan>
+    <tspan x="88" dy="25">studying: </tspan><tspan fill="#8F3154">"Computer Science @ PUCPR"</tspan><tspan>,</tspan>
+    <tspan x="88" dy="25">working: </tspan><tspan fill="#8F3154">"IT Intern @ MBRF"</tspan><tspan>,</tspan>
+    <tspan x="88" dy="25">currentArea: </tspan><tspan fill="#8F3154">"Hyperautomation, Chatbots &amp; AI"</tspan><tspan>,</tspan>
+
+```
+<tspan x="88" dy="34">vibe: [</tspan>
+<tspan x="112" dy="25" fill="#4D8061">"creative coder"</tspan><tspan>, </tspan><tspan fill="#4D8061">"fullstack girl"</tspan><tspan>, </tspan><tspan fill="#4D8061">"product builder"</tspan><tspan>,</tspan>
+<tspan x="112" dy="25" fill="#4D8061">"curious tech girl"</tspan><tspan>, </tspan><tspan fill="#4D8061">"chaos solver"</tspan>
+<tspan x="88" dy="25">],</tspan>
+
+<tspan x="88" dy="34">favoritePlace: </tspan><tspan fill="#8F3154">"between the visual and the logical"</tspan><tspan>,</tspan>
+<tspan x="88" dy="25">buildingWith: </tspan><tspan fill="#8F3154">"interfaces · data · APIs · automation · AI experiments"</tspan><tspan>,</tspan>
+<tspan x="88" dy="25">personalPatchNotes: </tspan><tspan fill="#8F3154">"code on my mind, references saved, no single layer."</tspan>
+<tspan x="64" dy="25">};</tspan>
+```
+
+  </text>
+
+  <rect x="64" y="550" width="772" height="132" rx="18" fill="#FFF1F7" stroke="#6D3A4F" stroke-opacity="0.14"/>
+  <text x="88" y="585" font-family="SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace" font-size="15" fill="#6D3A4F">mishka@github:~$ ./status.sh</text>
+  <text x="88" y="620" font-family="SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace" font-size="14" fill="#3D2A35" xml:space="preserve">
+    <tspan x="88" dy="0">[ location  ] Curitiba, BR</tspan>
+    <tspan x="88" dy="22">[ degree    ] Computer Science @ PUCPR</tspan>
+    <tspan x="88" dy="22">[ role      ] IT Intern @ MBRF · Hyperautomation, Chatbots &amp; AI</tspan>
+    <tspan x="88" dy="22">[ focus     ] creative code, smart systems, pretty interfaces</tspan>
+  </text>
+
+  <rect x="64" y="708" width="772" height="96" rx="18" fill="#FFF1F7" stroke="#6D3A4F" stroke-opacity="0.14"/>
+  <text x="88" y="743" font-family="SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace" font-size="15" fill="#6D3A4F">mishka@github:~$ ls ./selected-work</text>
+  <text x="88" y="776" font-family="SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace" font-size="14" fill="#3D2A35">
+    soul/ · cuidarmais/ · klesskap/ · portfolio/
+  </text>
+
+  <text x="64" y="842" font-family="SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace" font-size="13" fill="#7C6570">
+    javascript · typescript · python · java · c · php · html · css · node.js · flask · mysql · git · photoshop
+  </text>
+</svg>
