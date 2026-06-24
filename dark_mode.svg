@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback, Consolas, monospace" width="985px" height="530px" font-size="16px">
+<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback, Consolas, monospace" width="985px" height="570px" font-size="16px">
   <style>
     @font-face {
       src: local('Consolas'), local('Consolas Bold');
@@ -10,75 +9,74 @@
       size-adjust: 109%;
     }
 
-```
-.key { fill: #A7C080; }
-.value { fill: #D3C6AA; }
-.soft { fill: #859289; }
-.addColor { fill: #A7C080; }
-.delColor { fill: #E67E80; }
-.accent { fill: #DBBC7F; }
-.ascii { fill: #D3C6AA; }
-text, tspan { white-space: pre; }
-```
-
+    .key { fill: #8B949E; }
+    .value { fill: #F0F3F6; }
+    .soft { fill: #6E7681; }
+    .ascii { fill: #C9D1D9; }
+    text, tspan { white-space: pre; }
   </style>
 
-  <rect width="985px" height="530px" fill="#161B22" rx="15"/>
+  <rect width="985px" height="570px" fill="#0D1117" rx="15"/>
 
   <text x="15" y="30" class="ascii">
-    <tspan x="15" y="30">          /\_/\                          </tspan>
-    <tspan x="15" y="50">         ( o.o )                         </tspan>
-    <tspan x="15" y="70">          &gt; ^ &lt;                          </tspan>
-    <tspan x="15" y="90">                                         </tspan>
-    <tspan x="15" y="110">     /home/mishka                        </tspan>
-    <tspan x="15" y="130">     ├── interface                       </tspan>
-    <tspan x="15" y="150">     │   ├── visual care                 </tspan>
-    <tspan x="15" y="170">     │   └── pretty logic                </tspan>
-    <tspan x="15" y="190">     ├── systems                         </tspan>
-    <tspan x="15" y="210">     │   ├── data                        </tspan>
-    <tspan x="15" y="230">     │   ├── APIs                        </tspan>
-    <tspan x="15" y="250">     │   └── automation                  </tspan>
-    <tspan x="15" y="270">     ├── experiments                     </tspan>
-    <tspan x="15" y="290">     │   ├── AI                          </tspan>
-    <tspan x="15" y="310">     │   └── product ideas               </tspan>
-    <tspan x="15" y="330">     └── notes                           </tspan>
-    <tspan x="15" y="350">         └── no single layer             </tspan>
-    <tspan x="15" y="370">                                         </tspan>
-    <tspan x="15" y="390">     code on my mind                     </tspan>
-    <tspan x="15" y="410">     too many references saved           </tspan>
-    <tspan x="15" y="430">     organized chaos                     </tspan>
-    <tspan x="15" y="450">     with a good interface               </tspan>
+    <tspan x="15" y="30">⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣤⣤⣤⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀</tspan>
+    <tspan x="15" y="50">⠀⠀⠀⠀⠀⢀⣤⡶⠿⠋⠛⠉⠁⠀⠉⠛⠿⣶⣀⠀⠀⠀⠀⠀</tspan>
+    <tspan x="15" y="70">⠀⠀⠀⣠⣾⠟⠁⠀⠀⢀⣄⣤⣤⣀⠀⠀⠀⠈⠻⣧⡀⠀⠀⠀</tspan>
+    <tspan x="15" y="90">⠀⠀⣠⣼⠟⠀⠀⣠⣴⠟⠉⠉⠈⠉⠻⣷⣄⠀⠀⠹⣷⡀⠀⠀</tspan>
+    <tspan x="15" y="110">⠀⣠⡿⠁⠀⢀⣾⠟⠁⠀⣠⣤⡶⣤⣤⣀⠈⢻⣦⠀⠀⡿⡇⠀</tspan>
+    <tspan x="15" y="130">⠀⣿⠀⠀⢀⣾⠋⠀⠀⣾⠏⠀⣠⣄⠉⢻⣆⠈⣿⡄⠀⢸⡧⠀</tspan>
+    <tspan x="15" y="150">⢸⡏⠀⠀⢸⡏⠀⠀⣸⡇⠀⢼⡏⠻⠂⢸⡯⠀⣸⡇⠀⣸⠇⠀</tspan>
+    <tspan x="15" y="170">⢸⣇⠀⠀⢿⡇⠀⠀⠪⣷⠀⠈⠻⣷⡾⠟⠁⢠⡿⠁⢰⡿⠀⠀</tspan>
+    <tspan x="15" y="190">⠀⢿⣆⠀⠈⣿⡄⠀⠀⠻⣷⣄⣀⣀⣀⣠⣴⠿⠁⠀⣴⠿⠀⠀</tspan>
+    <tspan x="15" y="210">⠀⠈⢻⣧⠀⠘⠿⣶⣄⠀⠈⠈⠛⠛⠛⠋⠀⠀⣤⡾⠋⠀⠀⠀</tspan>
+    <tspan x="15" y="230">⠀⠀⠀⠀⠋⠀⠀⠀⠈⠹⠷⣦⣤⣤⣤⣤⡴⠾⠟⠋⠀⠀⠀⠀</tspan>
+    <tspan x="15" y="250">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠁⠀⠀⠀⠀⠀⠀⠀⠀</tspan>
+    <tspan x="15" y="290">     /home/mishka                    </tspan>
+    <tspan x="15" y="310">     ├── interface                   </tspan>
+    <tspan x="15" y="330">     │   ├── visual care             </tspan>
+    <tspan x="15" y="350">     │   └── pretty logic            </tspan>
+    <tspan x="15" y="370">     ├── systems                     </tspan>
+    <tspan x="15" y="390">     │   ├── data                    </tspan>
+    <tspan x="15" y="410">     │   ├── APIs                    </tspan>
+    <tspan x="15" y="430">     │   └── automation              </tspan>
+    <tspan x="15" y="450">     └── no single layer             </tspan>
+    <tspan x="15" y="490">     organized chaos                 </tspan>
+    <tspan x="15" y="510">     with a good interface           </tspan>
   </text>
 
-  <text x="390" y="30" fill="#D3C6AA">
-    <tspan x="390" y="30">mishka@github</tspan><tspan class="soft"> -———————————————————————————————————————————-—-</tspan>
+  <text x="390" y="30" fill="#F0F3F6">
+    <tspan x="390" y="30">mishka@github</tspan><tspan class="soft"> -——————————————————————————————————————————</tspan>
 
-```
-<tspan x="390" y="50" class="soft">. </tspan><tspan class="key">Name</tspan>:<tspan class="soft"> .............................. </tspan><tspan class="value">Letícia Miniuk</tspan>
-<tspan x="390" y="70" class="soft">. </tspan><tspan class="key">Alias</tspan>:<tspan class="soft"> ..................................... </tspan><tspan class="value">mishka</tspan>
-<tspan x="390" y="90" class="soft">. </tspan><tspan class="key">Location</tspan>:<tspan class="soft"> .......................... </tspan><tspan class="value">Curitiba, BR</tspan>
-<tspan x="390" y="110" class="soft">. </tspan><tspan class="key">Degree</tspan>:<tspan class="soft"> ..................... </tspan><tspan class="value">Computer Science @ PUCPR</tspan>
-<tspan x="390" y="130" class="soft">. </tspan><tspan class="key">Role</tspan>:<tspan class="soft"> ........................... </tspan><tspan class="value">IT Intern @ MBRF</tspan>
-<tspan x="390" y="150" class="soft">. </tspan><tspan class="key">Area</tspan>:<tspan class="soft"> ................. </tspan><tspan class="value">Hyperautomation, Chatbots &amp; AI</tspan>
+    <tspan x="390" y="50" class="soft">. </tspan><tspan class="key">Name</tspan>:<tspan class="soft"> .................................. </tspan><tspan class="value">Letícia Miniuk</tspan>
+    <tspan x="390" y="70" class="soft">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="soft" id="age_data_dots"> .................... </tspan><tspan class="value" id="age_data">24 years, 5 months, 6 days</tspan>
+    <tspan x="390" y="90" class="soft">. </tspan><tspan class="key">Location</tspan>:<tspan class="soft"> ............................ </tspan><tspan class="value">Curitiba, PR, BR</tspan>
+    <tspan x="390" y="110" class="soft">. </tspan><tspan class="key">Degree</tspan>:<tspan class="soft"> ...................... </tspan><tspan class="value">Computer Science @ PUCPR</tspan>
+    <tspan x="390" y="130" class="soft">. </tspan><tspan class="key">Role</tspan>:<tspan class="soft"> ................................ </tspan><tspan class="value">IT Intern @ MBRF</tspan>
+    <tspan x="390" y="150" class="soft">. </tspan><tspan class="key">Area</tspan>:<tspan class="soft"> .................. </tspan><tspan class="value">Hyperautomation, Chatbots &amp; AI</tspan>
 
-<tspan x="390" y="190">- Current mood</tspan><tspan class="soft"> -——————————————————————————————————————-—-</tspan>
-<tspan x="390" y="210" class="soft">. </tspan><tspan class="key">Focus</tspan>:<tspan class="soft"> ......... </tspan><tspan class="value">creative code, smart systems, pretty interfaces</tspan>
-<tspan x="390" y="230" class="soft">. </tspan><tspan class="key">Building</tspan>:<tspan class="soft"> ........ </tspan><tspan class="value">interfaces, data, APIs, automation, AI experiments</tspan>
-<tspan x="390" y="250" class="soft">. </tspan><tspan class="key">Learning</tspan>:<tspan class="soft"> ......... </tspan><tspan class="value">automation flows, AI systems, product thinking</tspan>
-<tspan x="390" y="270" class="soft">. </tspan><tspan class="key">Favorite place</tspan>:<tspan class="soft"> ........... </tspan><tspan class="value">between the visual and the logical</tspan>
+    <tspan x="390" y="190">- Current mood</tspan><tspan class="soft"> ——————————————————————————————————————————</tspan>
+    <tspan x="390" y="210" class="soft">. </tspan><tspan class="key">Focus</tspan>:<tspan class="soft"> ................... </tspan><tspan class="value">creative code, smart systems</tspan>
+    <tspan x="390" y="230" class="soft">. </tspan><tspan class="key">Style</tspan>:<tspan class="soft"> ................ </tspan><tspan class="value">pretty interfaces, useful flows</tspan>
+    <tspan x="390" y="250" class="soft">. </tspan><tspan class="key">Building</tspan>:<tspan class="soft"> .......... </tspan><tspan class="value">interfaces, data, APIs, automation</tspan>
+    <tspan x="390" y="270" class="soft">. </tspan><tspan class="key">Place</tspan>:<tspan class="soft"> ............. </tspan><tspan class="value">between the visual and the logical</tspan>
 
-<tspan x="390" y="310">- Stack</tspan><tspan class="soft"> -——————————————————————————————————————————————-—-</tspan>
-<tspan x="390" y="330" class="soft">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Programming</tspan>:<tspan class="soft"> ....... </tspan><tspan class="value">JavaScript, TypeScript, Python, Java, C, PHP</tspan>
-<tspan x="390" y="350" class="soft">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Web</tspan>:<tspan class="soft"> ................ </tspan><tspan class="value">HTML, CSS, Node.js, Flask</tspan>
-<tspan x="390" y="370" class="soft">. </tspan><tspan class="key">Data</tspan>:<tspan class="soft"> ................... </tspan><tspan class="value">MySQL, JSON, CSV, spreadsheets turned into systems</tspan>
-<tspan x="390" y="390" class="soft">. </tspan><tspan class="key">Tools</tspan>:<tspan class="soft"> ......................... </tspan><tspan class="value">Git, GitHub, VSCode, Photoshop</tspan>
+    <tspan x="390" y="310">- Stack</tspan><tspan class="soft"> -————————————————————————————————————————————————</tspan>
+    <tspan x="390" y="330" class="soft">. </tspan><tspan class="key">Programming</tspan>:<tspan class="soft"> ........... </tspan><tspan class="value">JavaScript, TypeScript, Python</tspan>
+    <tspan x="390" y="350" class="soft">. </tspan><tspan class="key">Web</tspan>:<tspan class="soft"> ........................ </tspan><tspan class="value">HTML, CSS, Node.js, Flask</tspan>
+    <tspan x="390" y="370" class="soft">. </tspan><tspan class="key">Data</tspan>:<tspan class="soft"> ................................ </tspan><tspan class="value">MySQL, JSON, CSV</tspan>
+    <tspan x="390" y="390" class="soft">. </tspan><tspan class="key">Tools</tspan>:<tspan class="soft"> ................. </tspan><tspan class="value">Git, GitHub, VSCode, Photoshop</tspan>
 
-<tspan x="390" y="430">- Selected work</tspan><tspan class="soft"> -————————————————————————————————————————-—-</tspan>
-<tspan x="390" y="450" class="soft">. </tspan><tspan class="key">soul</tspan>:<tspan class="soft"> ............. </tspan><tspan class="value">OS recommendation engine with quiz logic and AI</tspan>
-<tspan x="390" y="470" class="soft">. </tspan><tspan class="key">cuidarmais</tspan>:<tspan class="soft"> ........ </tspan><tspan class="value">volunteer management system with reports and flows</tspan>
-<tspan x="390" y="490" class="soft">. </tspan><tspan class="key">klesskap</tspan>:<tspan class="soft"> ......... </tspan><tspan class="value">inventory and POS prototype for fashion retail</tspan>
-<tspan x="390" y="510" class="soft">. </tspan><tspan class="key">portfolio</tspan>:<tspan class="soft"> ........ </tspan><tspan class="value">visual identity, bilingual content and interactions</tspan>
-```
+    <tspan x="390" y="430">- Contact</tspan><tspan class="soft"> ———————————————————————————————————————————————</tspan>
+    <tspan x="390" y="450" class="soft">. </tspan><tspan class="key">Portfolio</tspan>:<tspan class="soft"> ............ </tspan><tspan class="value">ltcmnk.github.io/portfolio</tspan>
+    <tspan x="390" y="470" class="soft">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="soft"> .......... </tspan><tspan class="value">linkedin.com/in/leticia-m-715730241</tspan>
 
+    <tspan x="390" y="510">- GitHub Stats</tspan><tspan class="soft"> ———————————————————————————————————————————</tspan>
+    <tspan x="390" y="530" class="soft">. </tspan><tspan class="key">Repos</tspan>:<tspan class="soft" id="repo_data_dots"> .... </tspan><tspan class="value" id="repo_data">0</tspan> {<tspan class="key">Contrib</tspan>: <tspan class="value" id="contrib_data">0</tspan>} | <tspan class="key">Stars</tspan>:<tspan class="soft" id="star_data_dots"> .... </tspan><tspan class="value" id="star_data">0</tspan>
+    <tspan x="390" y="550" class="soft">. </tspan><tspan class="key">Followers</tspan>:<tspan class="soft" id="follower_data_dots"> .... </tspan><tspan class="value" id="follower_data">0</tspan> | <tspan class="key">Commits</tspan>:<tspan class="soft" id="commit_data_dots"> .... </tspan><tspan class="value" id="commit_data">0</tspan> | <tspan class="key">LOC</tspan>:<tspan class="soft" id="loc_data_dots"> .... </tspan><tspan class="value" id="loc_data">0</tspan>
+  </text>
+
+  <text x="0" y="0" opacity="0">
+    <tspan id="loc_add">0</tspan>
+    <tspan id="loc_del">0</tspan>
   </text>
 </svg>
