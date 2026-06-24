@@ -79,9 +79,10 @@ def get_profile_stats():
             }
           }
         }
-        contributedRepositories(
+        repositoriesContributedTo(
           first: 100,
-          contributionTypes: [COMMIT, PULL_REQUEST, ISSUE, REPOSITORY]
+          contributionTypes: [COMMIT, ISSUE, PULL_REQUEST, REPOSITORY],
+          includeUserRepositories: true
         ) {
           totalCount
         }
@@ -94,7 +95,7 @@ def get_profile_stats():
     repos = user["repositories"]["nodes"]
 
     repo_count = user["repositories"]["totalCount"]
-    contributed_count = user["contributedRepositories"]["totalCount"]
+    contributed_count = user["repositoriesContributedTo"]["totalCount"]
     follower_count = user["followers"]["totalCount"]
 
     star_count = sum(repo["stargazerCount"] for repo in repos)
