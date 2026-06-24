@@ -1,5 +1,8 @@
 import datetime
+import json
 import os
+from pathlib import Path
+
 import requests
 from dateutil import relativedelta
 from lxml import etree
@@ -8,7 +11,9 @@ USER_NAME = os.environ.get("USER_NAME", "ltcmnk")
 ACCESS_TOKEN = os.environ["ACCESS_TOKEN"]
 
 BIRTHDAY = datetime.datetime(2002, 1, 17)
+
 SVG_FILES = ["dark_mode.svg", "light_mode.svg"]
+CACHE_FILE = Path("cache/loc_cache.json")
 
 HEADERS = {
     "Authorization": f"Bearer {ACCESS_TOKEN}",
@@ -33,7 +38,7 @@ def calculate_age():
     )
 
     if diff.months == 0 and diff.days == 0:
-        age += " (>∀<☆) "
+        age += " ଘ(੭*ˊᵕˋ)੭* "
 
     return age
 
@@ -57,17 +62,51 @@ def graphql(query, variables):
     return data["data"]
 
 
-def get_profile_stats():
+def load_cache():
+    if not CACHE_FILE.exists():
+        return {}
+
+    with CACHE_FILE.open("r", encoding="utf-8") as file:
+        return json.load(file)
+
+
+def save_cache(cache):
+    CACHE_FILE.parent.mkdir(parents=True, exist_ok=True)
+
+    with CACHE_FILE.open("w", encoding="utf-8") as file:
+        json.dump(cache, file, indent=2, ensure_ascii=False)
+
+
+def get_user_info():
     query = """
     query($login: String!) {
       user(login: $login) {
+        id
         followers {
           totalCount
         }
-        repositories(first: 100, ownerAffiliations: OWNER) {
-          totalCount
+      }
+    }
+    """
+
+    user = graphql(query, {"login": USER_NAME})["user"]
+
+    return {
+        "id": user["id"],
+        "followers": user["followers"]["totalCount"],
+    }
+
+
+def get_owned_repositories():
+    query = """
+    query($login: String!, $cursor: String) {
+      user(login: $login) {
+        repositories(first: 100, after: $cursor, ownerAffiliations: OWNER) {
           nodes {
-            stargazerCount
+            nameWithOwner
+            stargazers {
+              totalCount
+            }
             defaultBranchRef {
               target {
                 ... on Commit {
@@ -78,49 +117,239 @@ def get_profile_stats():
               }
             }
           }
-        }
-        repositoriesContributedTo(
-          first: 100,
-          contributionTypes: [COMMIT, ISSUE, PULL_REQUEST, REPOSITORY],
-          includeUserRepositories: true
-        ) {
-          totalCount
+          pageInfo {
+            hasNextPage
+            endCursor
+          }
         }
       }
     }
     """
 
-    user = graphql(query, {"login": USER_NAME})["user"]
+    repos = []
+    cursor = None
 
-    repos = user["repositories"]["nodes"]
+    while True:
+        data = graphql(query, {"login": USER_NAME, "cursor": cursor})["user"]["repositories"]
+        repos.extend(data["nodes"])
 
-    repo_count = user["repositories"]["totalCount"]
-    contributed_count = user["repositoriesContributedTo"]["totalCount"]
-    follower_count = user["followers"]["totalCount"]
+        if not data["pageInfo"]["hasNextPage"]:
+            break
 
-    star_count = sum(repo["stargazerCount"] for repo in repos)
+        cursor = data["pageInfo"]["endCursor"]
 
-    commit_count = 0
-    for repo in repos:
-        branch = repo.get("defaultBranchRef")
-        if branch and branch.get("target"):
-            commit_count += branch["target"]["history"]["totalCount"]
+    return repos
+
+
+def get_contributed_repositories():
+    query = """
+    query($login: String!, $cursor: String) {
+      user(login: $login) {
+        repositoriesContributedTo(
+          first: 100,
+          after: $cursor,
+          contributionTypes: [COMMIT, ISSUE, PULL_REQUEST, REPOSITORY],
+          includeUserRepositories: true
+        ) {
+          nodes {
+            nameWithOwner
+            stargazers {
+              totalCount
+            }
+            defaultBranchRef {
+              target {
+                ... on Commit {
+                  history {
+                    totalCount
+                  }
+                }
+              }
+            }
+          }
+          pageInfo {
+            hasNextPage
+            endCursor
+          }
+        }
+      }
+    }
+    """
+
+    repos = []
+    cursor = None
+
+    while True:
+        data = graphql(query, {"login": USER_NAME, "cursor": cursor})["user"]["repositoriesContributedTo"]
+        repos.extend(data["nodes"])
+
+        if not data["pageInfo"]["hasNextPage"]:
+            break
+
+        cursor = data["pageInfo"]["endCursor"]
+
+    return repos
+
+
+def get_default_branch_commit_count(repo):
+    branch = repo.get("defaultBranchRef")
+
+    if not branch:
+        return 0
+
+    target = branch.get("target")
+
+    if not target or "history" not in target:
+        return 0
+
+    return target["history"]["totalCount"]
+
+
+def count_loc_for_repo(name_with_owner, owner_id):
+    owner, repo_name = name_with_owner.split("/", 1)
+
+    query = """
+    query($owner: String!, $repo: String!, $cursor: String) {
+      repository(owner: $owner, name: $repo) {
+        defaultBranchRef {
+          target {
+            ... on Commit {
+              history(first: 100, after: $cursor) {
+                edges {
+                  node {
+                    additions
+                    deletions
+                    author {
+                      user {
+                        id
+                      }
+                    }
+                  }
+                }
+                pageInfo {
+                  hasNextPage
+                  endCursor
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    """
+
+    additions = 0
+    deletions = 0
+    commits = 0
+    cursor = None
+
+    while True:
+        data = graphql(
+            query,
+            {
+                "owner": owner,
+                "repo": repo_name,
+                "cursor": cursor,
+            },
+        )["repository"]
+
+        if data is None or data["defaultBranchRef"] is None:
+            return {
+                "additions": additions,
+                "deletions": deletions,
+                "commits": commits,
+            }
+
+        history = data["defaultBranchRef"]["target"]["history"]
+
+        for edge in history["edges"]:
+            commit = edge["node"]
+            author = commit.get("author") or {}
+            user = author.get("user")
+
+            if user and user.get("id") == owner_id:
+                additions += commit["additions"]
+                deletions += commit["deletions"]
+                commits += 1
+
+        if not history["pageInfo"]["hasNextPage"]:
+            break
+
+        cursor = history["pageInfo"]["endCursor"]
+
+    return {
+        "additions": additions,
+        "deletions": deletions,
+        "commits": commits,
+    }
+
+
+def calculate_loc(owner_id, repositories):
+    cache = load_cache()
+
+    total_additions = 0
+    total_deletions = 0
+    total_commits = 0
+
+    for repo in repositories:
+        name_with_owner = repo["nameWithOwner"]
+        default_branch_commits = get_default_branch_commit_count(repo)
+
+        cached_repo = cache.get(name_with_owner)
+
+        if cached_repo and cached_repo.get("default_branch_commits") == default_branch_commits:
+            repo_loc = cached_repo
+        else:
+            counted = count_loc_for_repo(name_with_owner, owner_id)
+
+            repo_loc = {
+                "default_branch_commits": default_branch_commits,
+                "additions": counted["additions"],
+                "deletions": counted["deletions"],
+                "commits": counted["commits"],
+            }
+
+            cache[name_with_owner] = repo_loc
+
+        total_additions += int(repo_loc["additions"])
+        total_deletions += int(repo_loc["deletions"])
+        total_commits += int(repo_loc["commits"])
+
+    save_cache(cache)
+
+    return {
+        "additions": total_additions,
+        "deletions": total_deletions,
+        "total": total_additions - total_deletions,
+        "commits": total_commits,
+    }
+
+
+def get_profile_stats():
+    user = get_user_info()
+
+    owned_repos = get_owned_repositories()
+    contributed_repos = get_contributed_repositories()
+
+    star_count = sum(repo["stargazers"]["totalCount"] for repo in owned_repos)
+
+    loc = calculate_loc(user["id"], contributed_repos)
 
     return {
         "age_data": calculate_age(),
-        "repo_data": repo_count,
-        "contrib_data": contributed_count,
+        "repo_data": len(owned_repos),
+        "contrib_data": len(contributed_repos),
         "star_data": star_count,
-        "follower_data": follower_count,
-        "commit_data": commit_count,
-        "loc_data": "soon",
-        "loc_add": "0",
-        "loc_del": "0",
+        "follower_data": user["followers"],
+        "commit_data": loc["commits"],
+        "loc_data": loc["total"],
+        "loc_add": loc["additions"],
+        "loc_del": loc["deletions"],
     }
 
 
 def find_and_replace(root, element_id, new_text):
     element = root.find(f".//*[@id='{element_id}']")
+
     if element is not None:
         element.text = str(new_text)
 
@@ -130,6 +359,7 @@ def justify_format(root, element_id, new_text, length=0):
         new_text = f"{new_text:,}"
 
     new_text = str(new_text)
+
     find_and_replace(root, element_id, new_text)
 
     if length <= 0:
@@ -156,9 +386,9 @@ def update_svg(filename, stats):
     justify_format(root, "commit_data", stats["commit_data"], 8)
     justify_format(root, "loc_data", stats["loc_data"], 9)
 
-    find_and_replace(root, "contrib_data", stats["contrib_data"])
-    find_and_replace(root, "loc_add", stats["loc_add"])
-    find_and_replace(root, "loc_del", stats["loc_del"])
+    find_and_replace(root, "contrib_data", f"{stats['contrib_data']:,}")
+    find_and_replace(root, "loc_add", f"{stats['loc_add']:,}")
+    find_and_replace(root, "loc_del", f"{stats['loc_del']:,}")
 
     tree.write(filename, encoding="UTF-8", xml_declaration=True)
 
