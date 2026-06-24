@@ -1,56 +1,82 @@
-<svg width="900" height="900" viewBox="0 0 900 900" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="900" height="900" fill="#FFF7FB"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback, Consolas, monospace" width="985px" height="570px" font-size="16px">
+  <style>
+    @font-face {
+      src: local('Consolas'), local('Consolas Bold');
+      font-family: 'ConsolasFallback';
+      font-display: swap;
+      -webkit-size-adjust: 109%;
+      size-adjust: 109%;
+    }
 
-  <circle cx="120" cy="110" r="180" fill="#E9B8C8" opacity="0.34"/>
-  <circle cx="810" cy="210" r="220" fill="#6D3A4F" opacity="0.08"/>
-  <circle cx="710" cy="820" r="230" fill="#F2D7E3" opacity="0.85"/>
+    .key { fill: #6E7781; }
+    .value { fill: #24292F; }
+    .soft { fill: #8C959F; }
+    .ascii { fill: #24292F; }
+    text, tspan { white-space: pre; }
+  </style>
 
-  <rect x="34" y="34" width="832" height="832" rx="30" fill="#FFFAFD" stroke="#6D3A4F" stroke-opacity="0.18"/>
+  <rect width="985px" height="570px" fill="#F6F8FA" rx="15"/>
 
-<text x="64" y="88" font-family="SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace" font-size="34" font-weight="700" fill="#6D3A4F">/home/mishka</text> <text x="64" y="122" font-family="SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace" font-size="14" fill="#7C6570">
-curitiba, br · computer science @ pucpr · it intern @ mbrf · fullstack · creative code · systems with personality </text>
-
-  <line x1="64" y1="154" x2="836" y2="154" stroke="#6D3A4F" stroke-opacity="0.16"/>
-
-  <text x="64" y="194" font-family="SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace" font-size="15" fill="#231820" xml:space="preserve">
-    <tspan x="64" dy="0" fill="#7C4D8B">const</tspan><tspan fill="#231820"> leticia = {</tspan>
-    <tspan x="88" dy="25">name: </tspan><tspan fill="#8F3154">"Letícia Miniuk"</tspan><tspan>,</tspan>
-    <tspan x="88" dy="25">alsoKnownAs: </tspan><tspan fill="#8F3154">"mishka"</tspan><tspan>,</tspan>
-    <tspan x="88" dy="25">basedIn: </tspan><tspan fill="#8F3154">"Curitiba, Brazil"</tspan><tspan>,</tspan>
-    <tspan x="88" dy="25">studying: </tspan><tspan fill="#8F3154">"Computer Science @ PUCPR"</tspan><tspan>,</tspan>
-    <tspan x="88" dy="25">working: </tspan><tspan fill="#8F3154">"IT Intern @ MBRF"</tspan><tspan>,</tspan>
-    <tspan x="88" dy="25">currentArea: </tspan><tspan fill="#8F3154">"Hyperautomation, Chatbots &amp; AI"</tspan><tspan>,</tspan>
-
-```
-<tspan x="88" dy="34">vibe: [</tspan>
-<tspan x="112" dy="25" fill="#4D8061">"creative coder"</tspan><tspan>, </tspan><tspan fill="#4D8061">"fullstack girl"</tspan><tspan>, </tspan><tspan fill="#4D8061">"product builder"</tspan><tspan>,</tspan>
-<tspan x="112" dy="25" fill="#4D8061">"curious tech girl"</tspan><tspan>, </tspan><tspan fill="#4D8061">"chaos solver"</tspan>
-<tspan x="88" dy="25">],</tspan>
-
-<tspan x="88" dy="34">favoritePlace: </tspan><tspan fill="#8F3154">"between the visual and the logical"</tspan><tspan>,</tspan>
-<tspan x="88" dy="25">buildingWith: </tspan><tspan fill="#8F3154">"interfaces · data · APIs · automation · AI experiments"</tspan><tspan>,</tspan>
-<tspan x="88" dy="25">personalPatchNotes: </tspan><tspan fill="#8F3154">"code on my mind, references saved, no single layer."</tspan>
-<tspan x="64" dy="25">};</tspan>
-```
-
+  <text x="15" y="30" class="ascii">
+    <tspan x="15" y="30">⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣤⣤⣤⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀</tspan>
+    <tspan x="15" y="50">⠀⠀⠀⠀⠀⢀⣤⡶⠿⠋⠛⠉⠁⠀⠉⠛⠿⣶⣀⠀⠀⠀⠀⠀</tspan>
+    <tspan x="15" y="70">⠀⠀⠀⣠⣾⠟⠁⠀⠀⢀⣄⣤⣤⣀⠀⠀⠀⠈⠻⣧⡀⠀⠀⠀</tspan>
+    <tspan x="15" y="90">⠀⠀⣠⣼⠟⠀⠀⣠⣴⠟⠉⠉⠈⠉⠻⣷⣄⠀⠀⠹⣷⡀⠀⠀</tspan>
+    <tspan x="15" y="110">⠀⣠⡿⠁⠀⢀⣾⠟⠁⠀⣠⣤⡶⣤⣤⣀⠈⢻⣦⠀⠀⡿⡇⠀</tspan>
+    <tspan x="15" y="130">⠀⣿⠀⠀⢀⣾⠋⠀⠀⣾⠏⠀⣠⣄⠉⢻⣆⠈⣿⡄⠀⢸⡧⠀</tspan>
+    <tspan x="15" y="150">⢸⡏⠀⠀⢸⡏⠀⠀⣸⡇⠀⢼⡏⠻⠂⢸⡯⠀⣸⡇⠀⣸⠇⠀</tspan>
+    <tspan x="15" y="170">⢸⣇⠀⠀⢿⡇⠀⠀⠪⣷⠀⠈⠻⣷⡾⠟⠁⢠⡿⠁⢰⡿⠀⠀</tspan>
+    <tspan x="15" y="190">⠀⢿⣆⠀⠈⣿⡄⠀⠀⠻⣷⣄⣀⣀⣀⣠⣴⠿⠁⠀⣴⠿⠀⠀</tspan>
+    <tspan x="15" y="210">⠀⠈⢻⣧⠀⠘⠿⣶⣄⠀⠈⠈⠛⠛⠛⠋⠀⠀⣤⡾⠋⠀⠀⠀</tspan>
+    <tspan x="15" y="230">⠀⠀⠀⠀⠋⠀⠀⠀⠈⠹⠷⣦⣤⣤⣤⣤⡴⠾⠟⠋⠀⠀⠀⠀</tspan>
+    <tspan x="15" y="250">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠁⠀⠀⠀⠀⠀⠀⠀⠀</tspan>
+    <tspan x="15" y="290">     /home/mishka                    </tspan>
+    <tspan x="15" y="310">     ├── interface                   </tspan>
+    <tspan x="15" y="330">     │   ├── visual care             </tspan>
+    <tspan x="15" y="350">     │   └── pretty logic            </tspan>
+    <tspan x="15" y="370">     ├── systems                     </tspan>
+    <tspan x="15" y="390">     │   ├── data                    </tspan>
+    <tspan x="15" y="410">     │   ├── APIs                    </tspan>
+    <tspan x="15" y="430">     │   └── automation              </tspan>
+    <tspan x="15" y="450">     └── no single layer             </tspan>
+    <tspan x="15" y="490">     organized chaos                 </tspan>
+    <tspan x="15" y="510">     with a good interface           </tspan>
   </text>
 
-  <rect x="64" y="550" width="772" height="132" rx="18" fill="#FFF1F7" stroke="#6D3A4F" stroke-opacity="0.14"/>
-  <text x="88" y="585" font-family="SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace" font-size="15" fill="#6D3A4F">mishka@github:~$ ./status.sh</text>
-  <text x="88" y="620" font-family="SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace" font-size="14" fill="#3D2A35" xml:space="preserve">
-    <tspan x="88" dy="0">[ location  ] Curitiba, BR</tspan>
-    <tspan x="88" dy="22">[ degree    ] Computer Science @ PUCPR</tspan>
-    <tspan x="88" dy="22">[ role      ] IT Intern @ MBRF · Hyperautomation, Chatbots &amp; AI</tspan>
-    <tspan x="88" dy="22">[ focus     ] creative code, smart systems, pretty interfaces</tspan>
+  <text x="390" y="30" fill="#24292F">
+    <tspan x="390" y="30">mishka@github</tspan><tspan class="soft"> -——————————————————————————————————————————</tspan>
+
+    <tspan x="390" y="50" class="soft">. </tspan><tspan class="key">Name</tspan>:<tspan class="soft"> .................................. </tspan><tspan class="value">Letícia Miniuk</tspan>
+    <tspan x="390" y="70" class="soft">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="soft" id="age_data_dots"> .................... </tspan><tspan class="value" id="age_data">24 years, 5 months, 6 days</tspan>
+    <tspan x="390" y="90" class="soft">. </tspan><tspan class="key">Location</tspan>:<tspan class="soft"> ............................ </tspan><tspan class="value">Curitiba, PR, BR</tspan>
+    <tspan x="390" y="110" class="soft">. </tspan><tspan class="key">Degree</tspan>:<tspan class="soft"> ...................... </tspan><tspan class="value">Computer Science @ PUCPR</tspan>
+    <tspan x="390" y="130" class="soft">. </tspan><tspan class="key">Role</tspan>:<tspan class="soft"> ................................ </tspan><tspan class="value">IT Intern @ MBRF</tspan>
+    <tspan x="390" y="150" class="soft">. </tspan><tspan class="key">Area</tspan>:<tspan class="soft"> .................. </tspan><tspan class="value">Hyperautomation, Chatbots &amp; AI</tspan>
+
+    <tspan x="390" y="190">- Current mood</tspan><tspan class="soft"> ——————————————————————————————————————————</tspan>
+    <tspan x="390" y="210" class="soft">. </tspan><tspan class="key">Focus</tspan>:<tspan class="soft"> ................... </tspan><tspan class="value">creative code, smart systems</tspan>
+    <tspan x="390" y="230" class="soft">. </tspan><tspan class="key">Style</tspan>:<tspan class="soft"> ................ </tspan><tspan class="value">pretty interfaces, useful flows</tspan>
+    <tspan x="390" y="250" class="soft">. </tspan><tspan class="key">Building</tspan>:<tspan class="soft"> .......... </tspan><tspan class="value">interfaces, data, APIs, automation</tspan>
+    <tspan x="390" y="270" class="soft">. </tspan><tspan class="key">Place</tspan>:<tspan class="soft"> ............. </tspan><tspan class="value">between the visual and the logical</tspan>
+
+    <tspan x="390" y="310">- Stack</tspan><tspan class="soft"> -————————————————————————————————————————————————</tspan>
+    <tspan x="390" y="330" class="soft">. </tspan><tspan class="key">Programming</tspan>:<tspan class="soft"> ........... </tspan><tspan class="value">JavaScript, TypeScript, Python</tspan>
+    <tspan x="390" y="350" class="soft">. </tspan><tspan class="key">Web</tspan>:<tspan class="soft"> ........................ </tspan><tspan class="value">HTML, CSS, Node.js, Flask</tspan>
+    <tspan x="390" y="370" class="soft">. </tspan><tspan class="key">Data</tspan>:<tspan class="soft"> ................................ </tspan><tspan class="value">MySQL, JSON, CSV</tspan>
+    <tspan x="390" y="390" class="soft">. </tspan><tspan class="key">Tools</tspan>:<tspan class="soft"> ................. </tspan><tspan class="value">Git, GitHub, VSCode, Photoshop</tspan>
+
+    <tspan x="390" y="430">- Contact</tspan><tspan class="soft"> ———————————————————————————————————————————————</tspan>
+    <tspan x="390" y="450" class="soft">. </tspan><tspan class="key">Portfolio</tspan>:<tspan class="soft"> ................. </tspan><tspan class="value">ltcmnk.github.io/portfolio</tspan>
+    <tspan x="390" y="470" class="soft">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="soft"> ......... </tspan><tspan class="value">linkedin.com/in/leticia-m-715730241</tspan>
+
+    <tspan x="390" y="510">- GitHub Stats</tspan><tspan class="soft"> ——————————————————————————————————————————</tspan>
+    <tspan x="390" y="530" class="soft">. </tspan><tspan class="key">Repos</tspan>:<tspan class="soft" id="repo_data_dots"> .... </tspan><tspan class="value" id="repo_data">0</tspan> {<tspan class="key">Contrib</tspan>: <tspan class="value" id="contrib_data">0</tspan>} | <tspan class="key">Stars</tspan>:<tspan class="soft" id="star_data_dots"> .... </tspan><tspan class="value" id="star_data">0</tspan>
+    <tspan x="390" y="550" class="soft">. </tspan><tspan class="key">Followers</tspan>:<tspan class="soft" id="follower_data_dots"> .... </tspan><tspan class="value" id="follower_data">0</tspan> | <tspan class="key">Commits</tspan>:<tspan class="soft" id="commit_data_dots"> .... </tspan><tspan class="value" id="commit_data">0</tspan> | <tspan class="key">LOC</tspan>:<tspan class="soft" id="loc_data_dots"> .... </tspan><tspan class="value" id="loc_data">0</tspan>
   </text>
 
-  <rect x="64" y="708" width="772" height="96" rx="18" fill="#FFF1F7" stroke="#6D3A4F" stroke-opacity="0.14"/>
-  <text x="88" y="743" font-family="SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace" font-size="15" fill="#6D3A4F">mishka@github:~$ ls ./selected-work</text>
-  <text x="88" y="776" font-family="SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace" font-size="14" fill="#3D2A35">
-    soul/ · cuidarmais/ · klesskap/ · portfolio/
-  </text>
-
-  <text x="64" y="842" font-family="SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace" font-size="13" fill="#7C6570">
-    javascript · typescript · python · java · c · php · html · css · node.js · flask · mysql · git · photoshop
+  <text x="0" y="0" opacity="0">
+    <tspan id="loc_add">0</tspan>
+    <tspan id="loc_del">0</tspan>
   </text>
 </svg>
