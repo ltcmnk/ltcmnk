@@ -67,8 +67,8 @@
     <tspan x="390" y="390" class="soft">. </tspan><tspan class="key">Tools</tspan>:<tspan class="soft"> ................. </tspan><tspan class="value">Git, GitHub, VSCode, Photoshop</tspan>
 
     <tspan x="390" y="430">- Contact</tspan><tspan class="soft"> ———————————————————————————————————————————————</tspan>
-    <tspan x="390" y="450" class="soft">. </tspan><tspan class="key">Portfolio</tspan>:<tspan class="soft"> .................. </tspan><tspan class="value">ltcmnk.github.io/portfolio</tspan>
-    <tspan x="390" y="470" class="soft">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="soft"> .......... </tspan><tspan class="value">linkedin.com/in/leticia-m-715730241</tspan>
+    <tspan x="390" y="450" class="soft">. </tspan><tspan class="key">Portfolio</tspan>:<tspan class="soft"> ................. </tspan><tspan class="value">ltcmnk.github.io/portfolio</tspan>
+    <tspan x="390" y="470" class="soft">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="soft"> ......... </tspan><tspan class="value">linkedin.com/in/leticia-m-715730241</tspan>
 
     <tspan x="390" y="510">- GitHub Stats</tspan><tspan class="soft"> ———————————————————————————————————————————</tspan>
     <tspan x="390" y="530" class="soft">. </tspan><tspan class="key">Repos</tspan>:<tspan class="soft" id="repo_data_dots"> .... </tspan><tspan class="value" id="repo_data">15</tspan> {<tspan class="key">Contrib</tspan>: <tspan class="value" id="contrib_data">11</tspan>} | <tspan class="key">Stars</tspan>:<tspan class="soft" id="star_data_dots"> ..... </tspan><tspan class="value" id="star_data">0</tspan>
