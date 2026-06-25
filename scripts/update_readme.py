@@ -15,6 +15,12 @@ BIRTHDAY = datetime.datetime(2002, 1, 17)
 SVG_FILES = ["dark_mode.svg", "light_mode.svg"]
 CACHE_FILE = Path("cache/loc_cache.json")
 
+# Visible character columns in the right-hand panel. Because the SVG uses a
+# monospace font, keeping values on these columns makes the dot leaders line up.
+RIGHT_COLUMN = 57
+REPO_VALUE_COLUMN = 16
+FOLLOWER_VALUE_COLUMN = 20
+
 HEADERS = {
     "Authorization": f"Bearer {ACCESS_TOKEN}",
     "Content-Type": "application/json",
@@ -354,39 +360,73 @@ def find_and_replace(root, element_id, new_text):
         element.text = str(new_text)
 
 
-def justify_format(root, element_id, new_text, length=0):
+def format_stat(new_text):
     if isinstance(new_text, int):
-        new_text = f"{new_text:,}"
+        return f"{new_text:,}"
 
-    new_text = str(new_text)
+    return str(new_text)
+
+
+def make_dot_leader(prefix_width, value, target_column):
+    available = max(0, target_column - prefix_width - len(value))
+
+    if available <= 2:
+        return {0: "", 1: " ", 2: ". "}[available]
+
+    return " " + ("." * (available - 2)) + " "
+
+
+def justify_format(root, element_id, new_text, prefix_width, target_column):
+    new_text = format_stat(new_text)
+    dot_string = make_dot_leader(prefix_width, new_text, target_column)
 
     find_and_replace(root, element_id, new_text)
-
-    if length <= 0:
-        return
-
-    remaining = max(0, length - len(new_text))
-
-    if remaining <= 2:
-        dot_string = {0: "", 1: " ", 2: ". "}[remaining]
-    else:
-        dot_string = " " + ("." * remaining) + " "
-
     find_and_replace(root, f"{element_id}_dots", dot_string)
+
+    return len(dot_string) + len(new_text)
 
 
 def update_svg(filename, stats):
     tree = etree.parse(filename)
     root = tree.getroot()
 
-    justify_format(root, "age_data", stats["age_data"], 31)
-    justify_format(root, "repo_data", stats["repo_data"], 6)
-    justify_format(root, "star_data", stats["star_data"], 6)
-    justify_format(root, "follower_data", stats["follower_data"], 6)
-    justify_format(root, "commit_data", stats["commit_data"], 8)
-    justify_format(root, "loc_data", stats["loc_data"], 9)
+    age = format_stat(stats["age_data"])
+    repo = format_stat(stats["repo_data"])
+    contrib = format_stat(stats["contrib_data"])
+    stars = format_stat(stats["star_data"])
+    followers = format_stat(stats["follower_data"])
+    commits = format_stat(stats["commit_data"])
+    loc = format_stat(stats["loc_data"])
 
-    find_and_replace(root, "contrib_data", f"{stats['contrib_data']:,}")
+    justify_format(root, "age_data", age, len(". Uptime:"), RIGHT_COLUMN)
+
+    repo_width = justify_format(
+        root, "repo_data", repo, len(". Repos:"), REPO_VALUE_COLUMN
+    )
+    star_prefix_width = (
+        len(". Repos:")
+        + repo_width
+        + len(" {Contrib: ")
+        + len(contrib)
+        + len("} | Stars:")
+    )
+    justify_format(root, "star_data", stars, star_prefix_width, RIGHT_COLUMN)
+
+    follower_width = justify_format(
+        root,
+        "follower_data",
+        followers,
+        len(". Followers:"),
+        FOLLOWER_VALUE_COLUMN,
+    )
+    commit_prefix_width = (
+        len(". Followers:") + follower_width + len(" | Commits:")
+    )
+    justify_format(root, "commit_data", commits, commit_prefix_width, RIGHT_COLUMN)
+
+    justify_format(root, "loc_data", loc, len(". LOC:"), RIGHT_COLUMN)
+
+    find_and_replace(root, "contrib_data", contrib)
     find_and_replace(root, "loc_add", f"{stats['loc_add']:,}")
     find_and_replace(root, "loc_del", f"{stats['loc_del']:,}")
 
