@@ -20,6 +20,7 @@ CACHE_FILE = Path("cache/loc_cache.json")
 RIGHT_COLUMN = 57
 REPO_VALUE_COLUMN = 16
 FOLLOWER_VALUE_COLUMN = 20
+LOC_VALUE_COLUMN = 22
 
 HEADERS = {
     "Authorization": f"Bearer {ACCESS_TOKEN}",
@@ -171,6 +172,14 @@ def get_contributed_repositories():
                 }
               }
             }
+            languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
+              edges {
+                size
+                node {
+                  name
+                }
+              }
+            }
           }
           pageInfo {
             hasNextPage
@@ -289,6 +298,41 @@ def count_loc_for_repo(name_with_owner, owner_id):
     }
 
 
+def aggregate_languages(repositories, top_n=5):
+    lang_bytes = {}
+
+    for repo in repositories:
+        for edge in (repo.get("languages") or {}).get("edges", []):
+            name = edge["node"]["name"]
+            lang_bytes[name] = lang_bytes.get(name, 0) + edge["size"]
+
+    total = sum(lang_bytes.values())
+
+    if total == 0:
+        return []
+
+    sorted_langs = sorted(lang_bytes.items(), key=lambda x: x[1], reverse=True)[:top_n]
+
+    BAR_WIDTH = 16
+    MAX_KEY = 12
+
+    result = []
+    for name, bytes_count in sorted_langs:
+        pct = bytes_count / total * 100
+        fill_count = round(pct / 100 * BAR_WIDTH)
+        empty_count = BAR_WIDTH - fill_count
+        display_name = name[:MAX_KEY]
+        result.append({
+            "name": display_name,
+            "pad": " " * (MAX_KEY - len(display_name)),
+            "fill": "█" * fill_count,
+            "empty": "░" * empty_count,
+            "pct": f"{pct:5.1f}%",
+        })
+
+    return result
+
+
 def calculate_loc(owner_id, repositories):
     cache = load_cache()
 
@@ -339,6 +383,7 @@ def get_profile_stats():
     star_count = sum(repo["stargazers"]["totalCount"] for repo in owned_repos)
 
     loc = calculate_loc(user["id"], contributed_repos)
+    languages = aggregate_languages(contributed_repos)
 
     return {
         "age_data": calculate_age(),
@@ -350,6 +395,7 @@ def get_profile_stats():
         "loc_data": loc["total"],
         "loc_add": loc["additions"],
         "loc_del": loc["deletions"],
+        "languages": languages,
     }
 
 
@@ -424,11 +470,18 @@ def update_svg(filename, stats):
     )
     justify_format(root, "commit_data", commits, commit_prefix_width, RIGHT_COLUMN)
 
-    justify_format(root, "loc_data", loc, len(". LOC:"), RIGHT_COLUMN)
+    justify_format(root, "loc_data", loc, len(". LOC:"), LOC_VALUE_COLUMN)
 
     find_and_replace(root, "contrib_data", contrib)
     find_and_replace(root, "loc_add", f"{stats['loc_add']:,}")
     find_and_replace(root, "loc_del", f"{stats['loc_del']:,}")
+
+    for i, lang in enumerate(stats.get("languages", [])[:5], 1):
+        find_and_replace(root, f"lang_{i}_key", lang["name"])
+        find_and_replace(root, f"lang_{i}_pad", lang["pad"])
+        find_and_replace(root, f"lang_{i}_fill", lang["fill"])
+        find_and_replace(root, f"lang_{i}_empty", lang["empty"])
+        find_and_replace(root, f"lang_{i}_pct", lang["pct"])
 
     tree.write(filename, encoding="UTF-8", xml_declaration=True)
 
