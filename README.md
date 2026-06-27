@@ -7,9 +7,9 @@
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="YOUR_VERCEL_URL/api/spotify?theme=dark">
-  <source media="(prefers-color-scheme: light)" srcset="YOUR_VERCEL_URL/api/spotify?theme=light">
-  <img alt="Letícia Miniuk Spotify" src="https://ltcmnk-9z34how5e-leticia-miniuks-projects.vercel.app">
+  <source media="(prefers-color-scheme: dark)" srcset="https://ltcmnk-9z34how5e-leticia-miniuks-projects.vercel.app/api/spotify?theme=dark">
+  <source media="(prefers-color-scheme: light)" srcset="https://ltcmnk-9z34how5e-leticia-miniuks-projects.vercel.app/api/spotify?theme=light">
+  <img alt="Letícia Miniuk Spotify" src="https://ltcmnk-9z34how5e-leticia-miniuks-projects.vercel.app/api/spotify?theme=dark">
 </picture>
 
 </div>
