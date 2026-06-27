@@ -61,7 +61,7 @@
     <tspan x="390" y="250" class="soft">. </tspan><tspan class="key">Building</tspan>:<tspan class="soft"> .......... </tspan><tspan class="value">interfaces, data, APIs, automation</tspan>
     <tspan x="390" y="270" class="soft">. </tspan><tspan class="key">Place</tspan>:<tspan class="soft"> ............. </tspan><tspan class="value">between the visual and the logical</tspan>
 
-    <tspan x="390" y="310">- Stack</tspan><tspan class="soft"> -————————————————————————————————————————————————</tspan>
+    <tspan x="390" y="310">- Stack</tspan><tspan class="soft"> —————————————————————————————————————————————————</tspan>
     <tspan x="390" y="330" class="soft">. </tspan><tspan class="key">Programming</tspan>:<tspan class="soft"> ........... </tspan><tspan class="value">JavaScript, TypeScript, Python</tspan>
     <tspan x="390" y="350" class="soft">. </tspan><tspan class="key">Web</tspan>:<tspan class="soft"> ........................ </tspan><tspan class="value">HTML, CSS, Node.js, Flask</tspan>
     <tspan x="390" y="370" class="soft">. </tspan><tspan class="key">Data</tspan>:<tspan class="soft"> ................................ </tspan><tspan class="value">MySQL, JSON, CSV</tspan>
