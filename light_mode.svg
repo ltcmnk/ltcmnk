@@ -17,31 +17,32 @@
   </style>
 
   <rect width="985px" height="730px" fill="#F6F8FA" rx="15"/>
+  <line x1="378" y1="15" x2="378" y2="715" stroke="#D0D7DE" stroke-width="1"/>
 
-  <text x="15" y="30" class="ascii">
-    <tspan x="15" y="30">⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣤⣤⣤⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀</tspan>
-    <tspan x="15" y="50">⠀⠀⠀⠀⠀⢀⣤⡶⠿⠋⠛⠉⠁⠀⠉⠛⠿⣶⣀⠀⠀⠀⠀⠀</tspan>
-    <tspan x="15" y="70">⠀⠀⠀⣠⣾⠟⠁⠀⠀⢀⣄⣤⣤⣀⠀⠀⠀⠈⠻⣧⡀⠀⠀⠀</tspan>
-    <tspan x="15" y="90">⠀⠀⣠⣼⠟⠀⠀⣠⣴⠟⠉⠉⠈⠉⠻⣷⣄⠀⠀⠹⣷⡀⠀⠀</tspan>
-    <tspan x="15" y="110">⠀⣠⡿⠁⠀⢀⣾⠟⠁⠀⣠⣤⡶⣤⣤⣀⠈⢻⣦⠀⠀⡿⡇⠀</tspan>
-    <tspan x="15" y="130">⠀⣿⠀⠀⢀⣾⠋⠀⠀⣾⠏⠀⣠⣄⠉⢻⣆⠈⣿⡄⠀⢸⡧⠀</tspan>
-    <tspan x="15" y="150">⢸⡏⠀⠀⢸⡏⠀⠀⣸⡇⠀⢼⡏⠻⠂⢸⡯⠀⣸⡇⠀⣸⠇⠀</tspan>
-    <tspan x="15" y="170">⢸⣇⠀⠀⢿⡇⠀⠀⠪⣷⠀⠈⠻⣷⡾⠟⠁⢠⡿⠁⢰⡿⠀⠀</tspan>
-    <tspan x="15" y="190">⠀⢿⣆⠀⠈⣿⡄⠀⠀⠻⣷⣄⣀⣀⣀⣠⣴⠿⠁⠀⣴⠿⠀⠀</tspan>
-    <tspan x="15" y="210">⠀⠈⢻⣧⠀⠘⠿⣶⣄⠀⠈⠈⠛⠛⠛⠋⠀⠀⣤⡾⠋⠀⠀⠀</tspan>
-    <tspan x="15" y="230">⠀⠀⠀⠀⠋⠀⠀⠀⠈⠹⠷⣦⣤⣤⣤⣤⡴⠾⠟⠋⠀⠀⠀⠀</tspan>
-    <tspan x="15" y="250">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠁⠀⠀⠀⠀⠀⠀⠀⠀</tspan>
-    <tspan x="15" y="290">     /home/mishka                    </tspan>
-    <tspan x="15" y="310">     ├── interface                   </tspan>
-    <tspan x="15" y="330">     │   ├── visual care             </tspan>
-    <tspan x="15" y="350">     │   └── pretty logic            </tspan>
-    <tspan x="15" y="370">     ├── systems                     </tspan>
-    <tspan x="15" y="390">     │   ├── data                    </tspan>
-    <tspan x="15" y="410">     │   ├── APIs                    </tspan>
-    <tspan x="15" y="430">     │   └── automation              </tspan>
-    <tspan x="15" y="450">     └── no single layer             </tspan>
-    <tspan x="15" y="490">     organized chaos                 </tspan>
-    <tspan x="15" y="510">     with a good interface           </tspan>
+  <text x="15" y="125" class="ascii">
+    <tspan x="15" y="125">⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣤⣤⣤⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀</tspan>
+    <tspan x="15" y="145">⠀⠀⠀⠀⠀⢀⣤⡶⠿⠋⠛⠉⠁⠀⠉⠛⠿⣶⣀⠀⠀⠀⠀⠀</tspan>
+    <tspan x="15" y="165">⠀⠀⠀⣠⣾⠟⠁⠀⠀⢀⣄⣤⣤⣀⠀⠀⠀⠈⠻⣧⡀⠀⠀⠀</tspan>
+    <tspan x="15" y="185">⠀⠀⣠⣼⠟⠀⠀⣠⣴⠟⠉⠉⠈⠉⠻⣷⣄⠀⠀⠹⣷⡀⠀⠀</tspan>
+    <tspan x="15" y="205">⠀⣠⡿⠁⠀⢀⣾⠟⠁⠀⣠⣤⡶⣤⣤⣀⠈⢻⣦⠀⠀⡿⡇⠀</tspan>
+    <tspan x="15" y="225">⠀⣿⠀⠀⢀⣾⠋⠀⠀⣾⠏⠀⣠⣄⠉⢻⣆⠈⣿⡄⠀⢸⡧⠀</tspan>
+    <tspan x="15" y="245">⢸⡏⠀⠀⢸⡏⠀⠀⣸⡇⠀⢼⡏⠻⠂⢸⡯⠀⣸⡇⠀⣸⠇⠀</tspan>
+    <tspan x="15" y="265">⢸⣇⠀⠀⢿⡇⠀⠀⠪⣷⠀⠈⠻⣷⡾⠟⠁⢠⡿⠁⢰⡿⠀⠀</tspan>
+    <tspan x="15" y="285">⠀⢿⣆⠀⠈⣿⡄⠀⠀⠻⣷⣄⣀⣀⣀⣠⣴⠿⠁⠀⣴⠿⠀⠀</tspan>
+    <tspan x="15" y="305">⠀⠈⢻⣧⠀⠘⠿⣶⣄⠀⠈⠈⠛⠛⠛⠋⠀⠀⣤⡾⠋⠀⠀⠀</tspan>
+    <tspan x="15" y="325">⠀⠀⠀⠀⠋⠀⠀⠀⠈⠹⠷⣦⣤⣤⣤⣤⡴⠾⠟⠋⠀⠀⠀⠀</tspan>
+    <tspan x="15" y="345">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠁⠀⠀⠀⠀⠀⠀⠀⠀</tspan>
+    <tspan x="15" y="385">     /home/mishka                    </tspan>
+    <tspan x="15" y="405">     ├── interface                   </tspan>
+    <tspan x="15" y="425">     │   ├── visual care             </tspan>
+    <tspan x="15" y="445">     │   └── pretty logic            </tspan>
+    <tspan x="15" y="465">     ├── systems                     </tspan>
+    <tspan x="15" y="485">     │   ├── data                    </tspan>
+    <tspan x="15" y="505">     │   ├── APIs                    </tspan>
+    <tspan x="15" y="525">     │   └── automation              </tspan>
+    <tspan x="15" y="545">     └── no single layer             </tspan>
+    <tspan x="15" y="585">     organized chaos                 </tspan>
+    <tspan x="15" y="605">     with a good interface           </tspan>
   </text>
 
   <text x="390" y="30" fill="#24292F">
@@ -67,11 +68,11 @@
     <tspan x="390" y="390" class="soft">. </tspan><tspan class="key">Tools</tspan>:<tspan class="soft"> ................. </tspan><tspan class="value">Git, GitHub, VSCode, Photoshop</tspan>
 
     <tspan x="390" y="430">- Languages</tspan><tspan class="soft"> ————————————————————————————————————————————————</tspan>
-    <tspan x="390" y="450" class="soft">. </tspan><tspan class="key" id="lang_1_key">JavaScript</tspan><tspan class="soft" id="lang_1_pad">  </tspan><tspan class="value" id="lang_1_fill">███████</tspan><tspan class="soft" id="lang_1_empty">░░░░░░░░░</tspan><tspan class="soft">  </tspan><tspan class="value" id="lang_1_pct"> 45.0%</tspan>
-    <tspan x="390" y="470" class="soft">. </tspan><tspan class="key" id="lang_2_key">Python</tspan><tspan class="soft" id="lang_2_pad">      </tspan><tspan class="value" id="lang_2_fill">████</tspan><tspan class="soft" id="lang_2_empty">░░░░░░░░░░░░</tspan><tspan class="soft">  </tspan><tspan class="value" id="lang_2_pct"> 22.0%</tspan>
-    <tspan x="390" y="490" class="soft">. </tspan><tspan class="key" id="lang_3_key">TypeScript</tspan><tspan class="soft" id="lang_3_pad">  </tspan><tspan class="value" id="lang_3_fill">███</tspan><tspan class="soft" id="lang_3_empty">░░░░░░░░░░░░░</tspan><tspan class="soft">  </tspan><tspan class="value" id="lang_3_pct"> 18.0%</tspan>
-    <tspan x="390" y="510" class="soft">. </tspan><tspan class="key" id="lang_4_key">CSS</tspan><tspan class="soft" id="lang_4_pad">         </tspan><tspan class="value" id="lang_4_fill">██</tspan><tspan class="soft" id="lang_4_empty">░░░░░░░░░░░░░░</tspan><tspan class="soft">  </tspan><tspan class="value" id="lang_4_pct"> 10.0%</tspan>
-    <tspan x="390" y="530" class="soft">. </tspan><tspan class="key" id="lang_5_key">HTML</tspan><tspan class="soft" id="lang_5_pad">        </tspan><tspan class="value" id="lang_5_fill">█</tspan><tspan class="soft" id="lang_5_empty">░░░░░░░░░░░░░░░</tspan><tspan class="soft">  </tspan><tspan class="value" id="lang_5_pct">  5.0%</tspan>
+    <tspan x="390" y="450" class="soft">. </tspan><tspan class="key" id="lang_1_key">JavaScript</tspan>:<tspan class="soft" id="lang_1_pad">...</tspan><tspan class="value" id="lang_1_fill">███████</tspan><tspan class="soft" id="lang_1_empty">░░░░░░░░░</tspan><tspan class="soft">  </tspan><tspan class="value" id="lang_1_pct"> 45.0%</tspan>
+    <tspan x="390" y="470" class="soft">. </tspan><tspan class="key" id="lang_2_key">Python</tspan>:<tspan class="soft" id="lang_2_pad">.......</tspan><tspan class="value" id="lang_2_fill">████</tspan><tspan class="soft" id="lang_2_empty">░░░░░░░░░░░░</tspan><tspan class="soft">  </tspan><tspan class="value" id="lang_2_pct"> 22.0%</tspan>
+    <tspan x="390" y="490" class="soft">. </tspan><tspan class="key" id="lang_3_key">TypeScript</tspan>:<tspan class="soft" id="lang_3_pad">...</tspan><tspan class="value" id="lang_3_fill">███</tspan><tspan class="soft" id="lang_3_empty">░░░░░░░░░░░░░</tspan><tspan class="soft">  </tspan><tspan class="value" id="lang_3_pct"> 18.0%</tspan>
+    <tspan x="390" y="510" class="soft">. </tspan><tspan class="key" id="lang_4_key">CSS</tspan>:<tspan class="soft" id="lang_4_pad">..........</tspan><tspan class="value" id="lang_4_fill">██</tspan><tspan class="soft" id="lang_4_empty">░░░░░░░░░░░░░░</tspan><tspan class="soft">  </tspan><tspan class="value" id="lang_4_pct"> 10.0%</tspan>
+    <tspan x="390" y="530" class="soft">. </tspan><tspan class="key" id="lang_5_key">HTML</tspan>:<tspan class="soft" id="lang_5_pad">.........</tspan><tspan class="value" id="lang_5_fill">█</tspan><tspan class="soft" id="lang_5_empty">░░░░░░░░░░░░░░░</tspan><tspan class="soft">  </tspan><tspan class="value" id="lang_5_pct">  5.0%</tspan>
 
     <tspan x="390" y="570">- Contact</tspan><tspan class="soft"> ———————————————————————————————————————————————</tspan>
     <tspan x="390" y="590" class="soft">. </tspan><tspan class="key">Portfolio</tspan>:<tspan class="soft"> ................. </tspan><tspan class="value">ltcmnk.github.io/portfolio</tspan>
