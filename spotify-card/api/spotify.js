@@ -75,7 +75,12 @@ async function getLastPlayed(token) {
   };
 }
 
-async function albumToAscii(artUrl) {
+async function albumToAscii(artUrl, theme = "dark") {
+  // On dark bg █ reads as bright; on light bg █ reads as dark — invert for light.
+  const chars = theme === "light" ? "█▓▒░ " : " ░▒▓█";
+  const fallback = theme === "light"
+    ? ["        ", " █▓▒▓█  ", " █    █ ", " █▓▒▓█  ", "        "]
+    : ["        ", " ░▒▓▒░  ", " ▒████▒ ", " ░▒▓▒░  ", "        "];
   try {
     const res = await fetch(artUrl);
     const buf = Buffer.from(await res.arrayBuffer());
@@ -92,13 +97,13 @@ async function albumToAscii(artUrl) {
         const idx = (y * 8 + x) * info.channels;
         const r = data[idx], g = data[idx + 1], b = data[idx + 2];
         const lum = 0.299 * r + 0.587 * g + 0.114 * b;
-        row += ASCII_CHARS[Math.min(Math.floor((lum / 256) * ASCII_CHARS.length), ASCII_CHARS.length - 1)];
+        row += chars[Math.min(Math.floor((lum / 256) * chars.length), chars.length - 1)];
       }
       rows.push(row);
     }
     return rows;
   } catch {
-    return ["        ", " ░▒▓▒░  ", " ▒████▒ ", " ░▒▓▒░  ", "        "];
+    return fallback;
   }
 }
 
@@ -184,7 +189,7 @@ export default async function handler(req, res) {
       return res.send(svg);
     }
 
-    const ascii = await albumToAscii(track.artUrl);
+    const ascii = await albumToAscii(track.artUrl, theme);
     const svg = buildSvg(track, ascii, theme);
 
     res.setHeader("Content-Type", "image/svg+xml");
