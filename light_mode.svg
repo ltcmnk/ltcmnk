@@ -61,13 +61,13 @@
     <tspan x="390" y="250" class="soft">. </tspan><tspan class="key">Building</tspan>:<tspan class="soft"> .......... </tspan><tspan class="value">interfaces, data, APIs, automation</tspan>
     <tspan x="390" y="270" class="soft">. </tspan><tspan class="key">Place</tspan>:<tspan class="soft"> ............. </tspan><tspan class="value">between the visual and the logical</tspan>
 
-    <tspan x="390" y="310">- Stack</tspan><tspan class="soft"> -————————————————————————————————————————————————</tspan>
+    <tspan x="390" y="310">- Stack</tspan><tspan class="soft"> —————————————————————————————————————————————————</tspan>
     <tspan x="390" y="330" class="soft">. </tspan><tspan class="key">Programming</tspan>:<tspan class="soft"> ........... </tspan><tspan class="value">JavaScript, TypeScript, Python</tspan>
     <tspan x="390" y="350" class="soft">. </tspan><tspan class="key">Web</tspan>:<tspan class="soft"> ........................ </tspan><tspan class="value">HTML, CSS, Node.js, Flask</tspan>
     <tspan x="390" y="370" class="soft">. </tspan><tspan class="key">Data</tspan>:<tspan class="soft"> ................................ </tspan><tspan class="value">MySQL, JSON, CSV</tspan>
     <tspan x="390" y="390" class="soft">. </tspan><tspan class="key">Tools</tspan>:<tspan class="soft"> ................. </tspan><tspan class="value">Git, GitHub, VSCode, Photoshop</tspan>
 
-    <tspan x="390" y="430">- Languages</tspan><tspan class="soft"> ————————————————————————————————————————————————</tspan>
+    <tspan x="390" y="430">- Languages</tspan><tspan class="soft"> —————————————————————————————————————————————</tspan>
     <tspan x="390" y="450" class="soft">. </tspan><tspan class="key" id="lang_1_key">JavaScript</tspan>:<tspan class="soft" id="lang_1_pad"> .................. </tspan><tspan class="value" id="lang_1_fill">███████</tspan><tspan class="soft" id="lang_1_empty">░░░░░░░░░</tspan><tspan class="soft">  </tspan><tspan class="value" id="lang_1_pct"> 45.0%</tspan>
     <tspan x="390" y="470" class="soft">. </tspan><tspan class="key" id="lang_2_key">Python</tspan>:<tspan class="soft" id="lang_2_pad"> ...................... </tspan><tspan class="value" id="lang_2_fill">████</tspan><tspan class="soft" id="lang_2_empty">░░░░░░░░░░░░</tspan><tspan class="soft">  </tspan><tspan class="value" id="lang_2_pct"> 22.0%</tspan>
     <tspan x="390" y="490" class="soft">. </tspan><tspan class="key" id="lang_3_key">TypeScript</tspan>:<tspan class="soft" id="lang_3_pad"> .................. </tspan><tspan class="value" id="lang_3_fill">███</tspan><tspan class="soft" id="lang_3_empty">░░░░░░░░░░░░░</tspan><tspan class="soft">  </tspan><tspan class="value" id="lang_3_pct"> 18.0%</tspan>
