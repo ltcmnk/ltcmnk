@@ -48,7 +48,7 @@
     <tspan x="390" y="30">mishka@github</tspan><tspan class="soft"> -——————————————————————————————————————————</tspan>
 
     <tspan x="390" y="50" class="soft">. </tspan><tspan class="key">Name</tspan>:<tspan class="soft"> .................................. </tspan><tspan class="value">Letícia Miniuk</tspan>
-    <tspan x="390" y="70" class="soft">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="soft" id="age_data_dots"> .................... </tspan><tspan class="value" id="age_data">24 years, 5 months, 9 days</tspan>
+    <tspan x="390" y="70" class="soft">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="soft" id="age_data_dots"> ................... </tspan><tspan class="value" id="age_data">24 years, 5 months, 10 days</tspan>
     <tspan x="390" y="90" class="soft">. </tspan><tspan class="key">Location</tspan>:<tspan class="soft"> ............................ </tspan><tspan class="value">Curitiba, PR, BR</tspan>
     <tspan x="390" y="110" class="soft">. </tspan><tspan class="key">Degree</tspan>:<tspan class="soft"> ...................... </tspan><tspan class="value">Computer Science @ PUCPR</tspan>
     <tspan x="390" y="130" class="soft">. </tspan><tspan class="key">Role</tspan>:<tspan class="soft"> ................................ </tspan><tspan class="value">IT Intern @ MBRF</tspan>
@@ -72,12 +72,12 @@
 
     <tspan x="390" y="510">- GitHub Stats</tspan><tspan class="soft"> ———————————————————————————————————————————</tspan>
     <tspan x="390" y="530" class="soft">. </tspan><tspan class="key">Repos</tspan>:<tspan class="soft" id="repo_data_dots"> .... </tspan><tspan class="value" id="repo_data">15</tspan> {<tspan class="key">Contrib</tspan>: <tspan class="value" id="contrib_data">11</tspan>} | <tspan class="key">Stars</tspan>:<tspan class="soft" id="star_data_dots"> ............... </tspan><tspan class="value" id="star_data">0</tspan>
-    <tspan x="390" y="550" class="soft">. </tspan><tspan class="key">Followers</tspan>:<tspan class="soft" id="follower_data_dots"> ..... </tspan><tspan class="value" id="follower_data">6</tspan> | <tspan class="key">Commits</tspan>:<tspan class="soft" id="commit_data_dots"> ...................... </tspan><tspan class="value" id="commit_data">94</tspan>
-    <tspan x="390" y="570" class="soft">. </tspan><tspan class="key">LOC</tspan>:<tspan class="soft" id="loc_data_dots"> ........................................... </tspan><tspan class="value" id="loc_data">38,076</tspan>
+    <tspan x="390" y="550" class="soft">. </tspan><tspan class="key">Followers</tspan>:<tspan class="soft" id="follower_data_dots"> ..... </tspan><tspan class="value" id="follower_data">6</tspan> | <tspan class="key">Commits</tspan>:<tspan class="soft" id="commit_data_dots"> ...................... </tspan><tspan class="value" id="commit_data">97</tspan>
+    <tspan x="390" y="570" class="soft">. </tspan><tspan class="key">LOC</tspan>:<tspan class="soft" id="loc_data_dots"> ........................................... </tspan><tspan class="value" id="loc_data">38,218</tspan>
   </text>
 
   <text x="0" y="0" opacity="0">
-    <tspan id="loc_add">54,431</tspan>
-    <tspan id="loc_del">16,355</tspan>
+    <tspan id="loc_add">55,763</tspan>
+    <tspan id="loc_del">17,545</tspan>
   </text>
 </svg>
