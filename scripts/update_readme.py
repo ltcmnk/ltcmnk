@@ -20,7 +20,6 @@ CACHE_FILE = Path("cache/loc_cache.json")
 RIGHT_COLUMN = 57
 REPO_VALUE_COLUMN = 16
 FOLLOWER_VALUE_COLUMN = 20
-LOC_VALUE_COLUMN = 22
 
 HEADERS = {
     "Authorization": f"Bearer {ACCESS_TOKEN}",
@@ -322,9 +321,13 @@ def aggregate_languages(repositories, top_n=5):
         fill_count = round(pct / 100 * BAR_WIDTH)
         empty_count = BAR_WIDTH - fill_count
         display_name = name[:MAX_KEY]
+        # Line: ". " + name + ":" + pad + bar(16) + "  " + pct(6) = RIGHT_COLUMN
+        # pad_width = RIGHT_COLUMN - 2 - len(name) - 1 - 16 - 2 - 6 = 30 - len(name)
+        pad_width = RIGHT_COLUMN - 27 - len(display_name)
+        pad = " " + "." * max(0, pad_width - 2) + " "
         result.append({
             "name": display_name,
-            "pad": " " * (MAX_KEY - len(display_name)),
+            "pad": pad,
             "fill": "█" * fill_count,
             "empty": "░" * empty_count,
             "pct": f"{pct:5.1f}%",
@@ -470,11 +473,16 @@ def update_svg(filename, stats):
     )
     justify_format(root, "commit_data", commits, commit_prefix_width, RIGHT_COLUMN)
 
-    justify_format(root, "loc_data", loc, len(". LOC:"), LOC_VALUE_COLUMN)
+    loc_add_str = f"{stats['loc_add']:,}"
+    loc_del_str = f"{stats['loc_del']:,}"
+    # Suffix " ( {add}++, {del}-- )" — its length determines where LOC value must end
+    loc_suffix_len = 3 + len(loc_add_str) + 4 + len(loc_del_str) + 4
+    loc_target_col = RIGHT_COLUMN - loc_suffix_len
+    justify_format(root, "loc_data", loc, len(". LOC:"), loc_target_col)
 
     find_and_replace(root, "contrib_data", contrib)
-    find_and_replace(root, "loc_add", f"{stats['loc_add']:,}")
-    find_and_replace(root, "loc_del", f"{stats['loc_del']:,}")
+    find_and_replace(root, "loc_add", loc_add_str)
+    find_and_replace(root, "loc_del", loc_del_str)
 
     for i, lang in enumerate(stats.get("languages", [])[:5], 1):
         find_and_replace(root, f"lang_{i}_key", lang["name"])
