@@ -77,6 +77,7 @@
     <tspan x="390" y="570">- Contact</tspan><tspan class="soft"> ———————————————————————————————————————————————</tspan>
     <tspan x="390" y="590" class="soft">. </tspan><tspan class="key">Portfolio</tspan>:<tspan class="soft"> ................. </tspan><tspan class="value">ltcmnk.github.io/portfolio</tspan>
     <tspan x="390" y="610" class="soft">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="soft"> ......... </tspan><tspan class="value">linkedin.com/in/leticia-m-715730241</tspan>
+    <tspan x="390" y="630" class="soft">. </tspan><tspan class="key">Sponsor</tspan>:<tspan class="soft"> ................... </tspan><tspan class="value">github.com/sponsors/ltcmnk</tspan>
 
     <tspan x="390" y="650">- GitHub Stats</tspan><tspan class="soft"> ——————————————————————————————————————————</tspan>
     <tspan x="390" y="670" class="soft">. </tspan><tspan class="key">Repos</tspan>:<tspan class="soft" id="repo_data_dots"> .... </tspan><tspan class="value" id="repo_data">15</tspan> {<tspan class="key">Contrib</tspan>: <tspan class="value" id="contrib_data">11</tspan>} | <tspan class="key">Stars</tspan>:<tspan class="soft" id="star_data_dots"> ............... </tspan><tspan class="value" id="star_data">0</tspan>
