@@ -110,9 +110,6 @@ def get_owned_repositories():
         repositories(first: 100, after: $cursor, ownerAffiliations: OWNER) {
           nodes {
             nameWithOwner
-            stargazers {
-              totalCount
-            }
             defaultBranchRef {
               target {
                 ... on Commit {
@@ -147,6 +144,38 @@ def get_owned_repositories():
     return repos
 
 
+def get_total_star_count():
+    query = """
+    query($login: String!, $cursor: String) {
+      user(login: $login) {
+        repositories(first: 100, after: $cursor, ownerAffiliations: OWNER, privacy: PUBLIC) {
+          nodes {
+            stargazerCount
+          }
+          pageInfo {
+            hasNextPage
+            endCursor
+          }
+        }
+      }
+    }
+    """
+
+    total = 0
+    cursor = None
+
+    while True:
+        data = graphql(query, {"login": USER_NAME, "cursor": cursor})["user"]["repositories"]
+        total += sum(repo["stargazerCount"] for repo in data["nodes"])
+
+        if not data["pageInfo"]["hasNextPage"]:
+            break
+
+        cursor = data["pageInfo"]["endCursor"]
+
+    return total
+
+
 def get_contributed_repositories():
     query = """
     query($login: String!, $cursor: String) {
@@ -159,9 +188,6 @@ def get_contributed_repositories():
         ) {
           nodes {
             nameWithOwner
-            stargazers {
-              totalCount
-            }
             defaultBranchRef {
               target {
                 ... on Commit {
@@ -383,7 +409,7 @@ def get_profile_stats():
     owned_repos = get_owned_repositories()
     contributed_repos = get_contributed_repositories()
 
-    star_count = sum(repo["stargazers"]["totalCount"] for repo in owned_repos)
+    star_count = get_total_star_count()
 
     loc = calculate_loc(user["id"], contributed_repos)
     languages = aggregate_languages(contributed_repos)
