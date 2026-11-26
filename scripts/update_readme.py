@@ -134,7 +134,7 @@ def get_owned_repositories():
 
     while True:
         data = graphql(query, {"login": USER_NAME, "cursor": cursor})["user"]["repositories"]
-        repos.extend(data["nodes"])
+        repos.extend(n for n in data["nodes"] if n)  # ponytail: GraphQL returns null for inaccessible repos
 
         if not data["pageInfo"]["hasNextPage"]:
             break
@@ -166,7 +166,7 @@ def get_total_star_count():
 
     while True:
         data = graphql(query, {"login": USER_NAME, "cursor": cursor})["user"]["repositories"]
-        total += sum(repo["stargazerCount"] for repo in data["nodes"])
+        total += sum(repo["stargazerCount"] for repo in data["nodes"] if repo)
 
         if not data["pageInfo"]["hasNextPage"]:
             break
@@ -220,7 +220,7 @@ def get_contributed_repositories():
 
     while True:
         data = graphql(query, {"login": USER_NAME, "cursor": cursor})["user"]["repositoriesContributedTo"]
-        repos.extend(data["nodes"])
+        repos.extend(n for n in data["nodes"] if n)  # ponytail: GraphQL returns null for inaccessible repos
 
         if not data["pageInfo"]["hasNextPage"]:
             break
@@ -323,12 +323,17 @@ def count_loc_for_repo(name_with_owner, owner_id):
     }
 
 
+MARKUP_LANGUAGES = {"HTML", "CSS", "SCSS"}  # markup inflates byte counts and hides real code languages
+
+
 def aggregate_languages(repositories, top_n=5):
     lang_bytes = {}
 
     for repo in repositories:
         for edge in (repo.get("languages") or {}).get("edges", []):
             name = edge["node"]["name"]
+            if name in MARKUP_LANGUAGES:
+                continue
             lang_bytes[name] = lang_bytes.get(name, 0) + edge["size"]
 
     total = sum(lang_bytes.values())
